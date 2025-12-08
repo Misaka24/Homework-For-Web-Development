@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #111111;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 40px auto 60px;
+            padding: 0 16px;
+        }
+
+        .page-header {
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 16px;
+            margin-bottom: 18px;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 0 0 6px;
+        }
+
+        .subtitle {
+            margin: 0;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        nav {
+            margin: 14px 0 10px;
+            font-size: 14px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            padding: 3px 2px;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav a:hover {
+            border-bottom-color: #111111;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 16px 0 24px;
+        }
+
+        section {
+            margin-bottom: 26px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 10px;
+            text-transform: none;
+            letter-spacing: 0.03em;
+        }
+
+        h3 {
+            font-size: 15px;
+            margin: 10px 0 4px;
+        }
+
+        p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px; /* 不用圆形，保持简洁 */
+            display: block;
+            margin-bottom: 10px;
+            border: 1px solid #dddddd;
+        }
+
+        ul {
+            margin: 6px 0;
+            padding-left: 18px;
+        }
+
+        li {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 4px;
+        }
+
+        .contact-label {
+            display: inline-block;
+            min-width: 72px;
+            color: #666666;
+        }
+
+        form {
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 13px;
+            color: #444444;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 7px 8px;
+            border-radius: 0;
+            border: 1px solid #cccccc;
+            font-size: 14px;
+            font-family: inherit;
+            background-color: #ffffff;
+            color: #111111;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #111111;
+        }
+
+        button[type="submit"] {
+            padding: 7px 18px;
+            border-radius: 0;
+            border: 1px solid #111111;
+            background-color: #111111;
+            color: #ffffff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ffffff;
+            color: #111111;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-top: 14px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 12px;
+            color: #777777;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1 class="name">宋龚擎宇</h1>
+            <p class="subtitle">软件工程大一新生</p>
+
+            <nav>
+                <ul>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#education">教育背景</a></li>
+                    <li><a href="#skills">个人爱好</a></li>
+                    <li><a href="#projects">个人规划</a></li>
+                    <li><a href="#contact">联系方式</a></li>
+                    <li><a href="https://www.bilibili.com/video/BV1GJ411x7h7" target="_blank">更多信息</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <hr class="divider">
+
+        <!-- 关于我 -->
+        <section id="about">
+            <h2>关于我</h2>
+            <img src="profile.jpg" alt="个人照片" class="avatar">
+            <p>我是一个正在学习软件工程的大一新生，对前端开发感兴趣。</p>
+            <p>正在学习 HTML、CSS、JavaScript 等前端开发技术。</p>
+        </section>
+
+        <!-- 教育背景 -->
+        <section id="education">
+            <h2>教育背景</h2>
+            <ul>
+                <li>2025年9月 - 2029年6月</li>
+                <li>西南大学 · 软件工程专业本科在读</li>
+            </ul>
+        </section>
+
+        <!-- 个人爱好 -->
+        <section id="skills">
+            <h2>个人爱好</h2>
+            <h3>运动爱好</h3>
+            <p>我喜欢运动，尤其是羽毛球。</p>
+
+            <h3>阅读爱好</h3>
+            <p>我喜欢阅读，尤其是科幻书籍。</p>
+
+            <h3>逻辑谜题</h3>
+            <p>我喜欢做逻辑谜题，比如数织。</p>
+        </section>
+
+        <!-- 个人规划 -->
+        <section id="projects">
+            <h2>个人规划</h2>
+            <ul>
+                <li>在未来的一学期里，完成一个简单的个人网站。</li>
+                <li>学习 C++，以提升我的编程能力。</li>
+                <li>在一年里参加一次软件项目开发比赛。</li>
+            </ul>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact">
+            <h2>联系方式</h2>
+            <ul class="contact-list">
+                <li><span class="contact-label">电子邮件：</span><a href="mailto:123456@example.com">123456@example.com</a></li>
+                <li><span class="contact-label">电话：</span>12345678901</li>
+                <li><span class="contact-label">QQ：</span>123456789</li>
+            </ul>
+        </section>
+
+        <!-- 留言表单 -->
+        <section>
+            <h2>给我留言</h2>
+            <form action="submit.php" method="post">
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">留言内容</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">提交</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 宋龚擎宇 | 个人主页</p>
+        </footer>
+    </div>
+</body>
+</html>
