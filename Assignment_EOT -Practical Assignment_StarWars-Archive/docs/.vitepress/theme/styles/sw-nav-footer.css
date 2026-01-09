@@ -1,0 +1,166 @@
+/* =========================================
+   styles/sw-nav-footer.css  (顶栏/菜单/页脚/强制暗色)
+   ========================================= */
+/* 隐藏外观切换按钮 */
+.VPNavBarAppearance,
+.VPSwitchAppearance {
+  display: none !important;
+}
+
+/* 顶栏不透明背景：修复滚动/透明漏字 */
+.VPNav,
+.VPNavBar,
+.VPNavBar.has-scrolled,
+.VPNavBar.is-fixed,
+.VPNavBar .content {
+  background: #040815 !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo 与站点标题 */
+.VPNav .logo {
+  height: 85px;
+  width: 85px;
+}
+
+.VPNav .title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .VPNav .title {
+    font-size: 20px;
+  }
+}
+
+/* 顶栏项目字号统一 */
+:root {
+  --vp-nav-item-font-size: 16px;
+  --vp-nav-item-height: auto;
+}
+
+.VPNav .VPLink,
+.VPNavBarMenuGroup > button,
+.VPNavBarMenuGroup > button .text {
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+  height: auto !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.VPNavBar .VPNavBarMenuLink:hover,
+.VPNavBarMenuGroup > button:hover,
+.VPNavBar .VPNavBarMenuLink.active,
+.VPNavBarMenuGroup > button.active {
+  color: #8da0ff !important;
+}
+
+.VPNavBar .VPNavBarMenuLink:hover::after,
+.VPNavBarMenuGroup > button:hover::after {
+  background-color: #79aaff !important;
+}
+
+/* 下拉菜单修复 */
+.VPMenu .link,
+.VPMenu .item {
+  color: var(--vp-c-text-1) !important;
+}
+
+.VPMenu .link:hover,
+.VPMenu .item:hover {
+  color: #8da0ff !important;
+}
+
+/* 页脚 */
+.VPFooter {
+  display: block !important;
+  border-top: 1px solid rgba(255, 232, 31, 0.2);
+  background-color: rgba(10, 20, 40, 0.9);
+  padding: 20px 0;
+}
+
+.VPFooter .message {
+  color: #ffe81f;
+  font-size: 1.1em;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(255, 232, 31, 0.5);
+}
+
+.VPFooter .copyright {
+  color: #b0b0b0;
+  font-size: 0.9em;
+}
+
+/* 修复首页裁字 */
+.VPHomeHero .name.clip {
+  overflow: visible !important;
+  line-height: 1.3 !important;
+  padding-bottom: 0.15em;
+}
+
+/* 删除顶栏本体的下边框/阴影 */
+.VPNav,
+.VPNavBar,
+.VPNavBar.has-scrolled,
+.VPNavBar.is-fixed {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.VPNavBar .divider,
+.VPNavBar .divider-line,
+.VPNavBar .VPNavBarDivider,
+.VPNavBar .VPNavBarDividerLine,
+.VPNavBar .VPNavBarExtra .divider {
+  display: none !important;
+}
+
+.VPNavBar .title,
+.VPNavBar .VPNavBarTitle,
+.VPNavBar .VPNavBarTitle .text,
+.VPNavBar .logo {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background-image: none !important; 
+}
+
+.VPNavBar::before,
+.VPNavBar::after,
+.VPNavBar .title::before,
+.VPNavBar .title::after,
+.VPNavBar .logo::before,
+.VPNavBar .logo::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 修复页脚背景不统一 */
+.VPFooter {
+  background: inherit !important;
+  background-color: inherit !important;
+  background-image: inherit !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+.VPFooter .container,
+.VPFooter .content {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+body,
+.VPContent,
+.VPDoc {
+  background-attachment: fixed;
+}
+
+.VPFooter::before,
+.VPFooter::after {
+  content: none !important;
+  display: none !important;
+}

@@ -1,0 +1,107 @@
+/* ===============================
+   styles/sw-sidebar-float.css （左侧悬浮隐藏侧栏）
+   =============================== */
+
+:root {
+  --sidebar-width: var(--vp-sidebar-width, 260px);
+  --sidebar-peek: 8px; 
+}
+
+.VPSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  z-index: 30;
+  transform: translateX(0);
+  transition: transform .25s ease;
+}
+
+.sidebar-trigger-zone {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-peek);
+  height: 100vh;
+  z-index: 40;
+}
+
+.sidebar-auto-hide .VPSidebar {
+  transform: translateX(calc(-100% + var(--sidebar-peek)));
+}
+
+.sidebar-open .VPSidebar {
+  transform: translateX(0);
+}
+
+/* ===============================
+   正文容器布局调整
+   =============================== */
+
+.VPContent.has-sidebar {
+  padding-left: var(--sidebar-width);
+  transition: padding-left .25s ease;
+}
+
+.sidebar-auto-hide .VPContent.has-sidebar {
+  padding-left: 0;
+}
+
+.sidebar-open .VPContent.has-sidebar {
+  padding-left: var(--sidebar-width);
+}
+
+/* ===============================
+           侧栏呼吸提示
+   =============================== */
+
+.sidebar-trigger-zone::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 260px; 
+  transform: translateY(-50%);
+  background: linear-gradient(
+    to right,
+    rgba(120,180,255,0.85),
+    rgba(120,180,255,0.35),
+    rgba(120,180,255,0)
+  );
+  pointer-events: none;
+  animation: sidebar-hint-breathe-long 6.2s ease-in-out infinite;
+}
+
+@keyframes sidebar-hint-breathe-long {
+  0% {
+    opacity: 0.14;  
+  }
+  50% {
+    opacity: 0.72;  
+  }
+  100% {
+    opacity: 0.14;
+  }
+}
+/* 展开后关闭提示 */
+.sidebar-open .sidebar-trigger-zone::after {
+  display: none;
+}
+/* 首页不显示侧边栏呼吸提示 */
+body.is-home .sidebar-trigger-zone::after {
+  display: none !important;
+}
+/* =========================================
+  修复：移除大屏左右留白
+   ========================================= */
+
+@media (min-width: 960px) {
+  :root {
+    --vp-layout-max-width: 100% !important;
+    --vp-nav-max-width: 100% !important;
+    --vp-doc-max-width: 100% !important;
+  }
+}
+

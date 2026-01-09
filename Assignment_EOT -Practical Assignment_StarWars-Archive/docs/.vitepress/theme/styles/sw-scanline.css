@@ -1,0 +1,39 @@
+/* =========================================================
+   styles/sw-scabline.css 背景扫描线控制（仅index页）
+   ========================================================= */
+
+:root {
+  --crt-scan-opacity: 0.4;
+  --crt-scan-light: rgba(255, 255, 255, 0.048);
+  --crt-scan-dark: rgba(0, 0, 0, 0.15);
+  --crt-scan-gap: 4.5px;
+}
+
+.VPHome::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9996;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--crt-scan-light) 0px,
+    var(--crt-scan-light) 1px,
+    var(--crt-scan-dark) 2px,
+    transparent var(--crt-scan-gap)
+  );
+  opacity: var(--crt-scan-opacity);
+  animation: crt-home-breath-mid 9s ease-in-out infinite;
+}
+
+@keyframes crt-home-breath-mid {
+  0%   { opacity: 0.36; }
+  50%  { opacity: 0.41; }
+  100% { opacity: 0.36; }
+}
+
+@media (max-width: 768px) {
+  .VPHome::before {
+    opacity: 0.30;
+  }
+}
