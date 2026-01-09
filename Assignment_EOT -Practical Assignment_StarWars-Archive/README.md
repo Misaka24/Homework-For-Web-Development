@@ -11,7 +11,7 @@
 - ~~This website is automatically deployed by GitHub Actions when the code is pushed to this repository.~~
 
 ## Features
-- For a full feature list of the website and this repository, see [Features.md](https://github.com/Misaka24/StarWars-Archive/Features.md).
+- For a full feature list of the website and this repository, see [Features.md](https://github.com/Misaka24/StarWars-Archive/blob/main/Features.md).
 
 ## Future Work
-- For the future work of the website, see [FutureWork.md](https://github.com/Misaka24/StarWars-Archive/FutureWork.md).
+- For the future work of the website, see [FutureWork.md](https://github.com/Misaka24/StarWars-Archive/blob/main/FutureWork.md).
